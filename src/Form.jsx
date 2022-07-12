@@ -18,8 +18,8 @@ export const Form = (props) => {
                     <Boton nombre="Login"/>
                 </form>
                 <div class="pie-form">
-                    <a >¿Perdiste tu contraseña?</a>
-                    <a >¿No tienes Cuenta? Registrate</a>
+                    <a href="https://ventos.mx">¿Perdiste tu contraseña?</a>
+                    <a href="https://ventos.mx">¿No tienes Cuenta? Registrate</a>
                 </div>
                 </div>
             </div>
