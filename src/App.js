@@ -1,19 +1,17 @@
-import {NavBar} from './NavBar'
-import {Boton} from './Boton';
-import {Form} from './Form'
+import {Header} from './Header'
+import {Nav} from './Nav'
 import './estilos.css'
+
 
 
 function App() {
 
-
-
   return (
     <div>
-      <Form id="123"/>
+       <Nav />
+       <Header />
     </div>
   );
-
 }
 
 export default App;
