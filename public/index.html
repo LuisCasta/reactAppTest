@@ -2,22 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/@proficonf/iframe-api"></script>
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -29,6 +27,51 @@
     -->
     <title>React App</title>
   </head>
+  <script>
+    const uiOptions = {
+        removeElements: [
+            'logo', 'meetingName', 'roomLocker', 'leaveButton',
+            'recordingControl', 'streamingControl'
+        ]
+    };
+
+    const api = new Proficonf({
+        meetingUrl: 'https://app.proficonf.com/j/3V3o36XKKOA/',
+        user: {
+            name: 'Tester'
+        },
+        ui: uiOptions
+    });
+
+    api.on('participantRoleChanged', (event) => {
+        api.sendChatMessage(`${event.participant.name} is now a ${event.role}!`);
+    });
+
+    document.querySelector('#enableCamera').addEventListener('click', () => {
+        api.enableCamera()
+            .then(() => console.log('Everything OK!'))
+            .catch((error) => alert(`Camera error: ${error.message}`));
+    });
+
+    document.querySelector('#disableCamera').addEventListener('click', () => {
+        api.disableCamera();
+    });
+
+    document.querySelector('#startRecording').addEventListener('click', () => {
+        api.startRecording();
+    });
+
+    document.querySelector('#stopRecording').addEventListener('click', () => {
+        api.stopRecording();
+    });
+
+    document.querySelector('#primaryColor').addEventListener('change', (event) => {
+        uiOptions.customPrimaryColor = event.target.value;
+        api.updateUIConfig(uiOptions);
+    });
+
+    api.join();
+</script>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>

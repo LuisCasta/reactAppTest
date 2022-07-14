@@ -1,5 +1,6 @@
 import {Header} from './Header'
 import {Nav} from './Nav'
+import {Video} from './Meeting'
 import './estilos.css'
 
 
@@ -10,6 +11,7 @@ function App() {
     <div>
        <Nav />
        <Header />
+       <Video/>
     </div>
   );
 }
