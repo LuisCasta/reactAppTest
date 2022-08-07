@@ -5,7 +5,19 @@ import './estilos.css'
 
 
 
+
 function App() {
+
+  const getVentos =async () => {
+
+    const result = await fetch("https://ventos-api-server.onrender.com")
+  
+   const ventos = await result.json();
+
+   console.log(ventos);
+  }
+  
+  getVentos()
 
   return (
     <div>
