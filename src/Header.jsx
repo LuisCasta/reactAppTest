@@ -8,7 +8,7 @@ return(
         <div className={styles.header}>
 
             <div className={styles.headerText}>
-                <h1>Tus Webinars y cursos  en un sólo lugar</h1>
+                <h1>Tus Webinars y cursos <br /> en un sólo lugar.</h1>
                 <h2>Ventos Webinars pensado para empresas, consultores
                 Asesores, emprendedores o maestros.
                 </h2>

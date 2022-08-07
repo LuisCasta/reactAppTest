@@ -17,7 +17,10 @@ export const Nav = () => {
                 </div>
 
                 <div className="resto">
-                    <a href="">{fecha}{hora}</a>
+                      <a href="">{fecha}{hora}</a>
+                </div>
+                
+                <div>
                     <a href=""><img src='' alt="" />Mis Webinars</a>
                     <a href=""><i className='bx bxs-comment-add bx-sm'></i></a>
                 </div>
@@ -26,3 +29,4 @@ export const Nav = () => {
     )
 
 };
+
