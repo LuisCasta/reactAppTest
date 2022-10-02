@@ -93,6 +93,10 @@ hr{
   margin-bottom: 50px;
 }
 
+a-btn{
+  cursor: pointer;
+}
+
 @media (max-width:756px){
 
   .header{

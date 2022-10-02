@@ -1,44 +1,20 @@
-import {Header} from './Header'
-import {Nav} from './Nav'
-import {Video} from './Meeting'
-import {Course} from './Course'
-import './estilos.css'
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+const Home = lazy(() => import('./pages/Home'));
+const Login = lazy(() => import('./pages/Login'));
+
+const App = () => (
+  <Router>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Suspense>
+  </Router>
+);
 
 
-
-
-function App() {
-
-  /*const getVentos = async () => {
-	
-    const url = 'https://ventos-api-server.onrender.com/api/course/';
-    
-    const result = await fetch(url);
-    const ventos = await result.json();
-    
-    ventos.map(course =>{
-      console.log('curso: '+course.curso)
-    })
-    return ventos;
-    
-  }
-  
-  var cursos = getVentos();*/
-
-  return (
-    
-    <div>
-       <Nav />
-       {/*
-        
-        cursos.map( curso => {
-          <Course name={curso.curso} description={curso.descripcion}/>
-        })*/
-       }
-       <Header />
-       <Video/>
-    </div>
-  );
-}
 
 export default App;
