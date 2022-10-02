@@ -7,6 +7,11 @@ const Home = () => {
         <>
             <Nav/>
             <Header />
+            <ul>
+                <li>/ = Home</li>
+                <li>/login = Login</li>
+                <li>/course = Course</li>
+            </ul>
         </>
     );
 }

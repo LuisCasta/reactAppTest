@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {Nav} from '../Nav.jsx';
 import {Header} from '../Header'
-
 import "../estilos.css";
 
 function App() {
