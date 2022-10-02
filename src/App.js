@@ -9,7 +9,7 @@ import './estilos.css'
 
 function App() {
 
-  const getVentos = async () => {
+  /*const getVentos = async () => {
 	
     const url = 'https://ventos-api-server.onrender.com/api/course/';
     
@@ -23,17 +23,17 @@ function App() {
     
   }
   
-  var cursos = getVentos();
+  var cursos = getVentos();*/
 
   return (
     
     <div>
        <Nav />
-       {
+       {/*
         
         cursos.map( curso => {
           <Course name={curso.curso} description={curso.descripcion}/>
-        })
+        })*/
        }
        <Header />
        <Video/>
